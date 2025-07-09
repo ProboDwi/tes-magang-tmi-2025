@@ -4,6 +4,14 @@ Sistem manajemen transaksi produk berbasis web menggunakan **Laravel** dan **Adm
 
 ---
 
+## 🙋‍♂️ Identitas Pengembang
+
+- **Nama**: Probo Dwi Wahyudi  
+- **Kampus**: Politeknik Negeri Cilacap  
+- **Program**: Tes Magang di TMI (Tanjung Mulia Informatika)
+
+---
+
 ## 🚀 Fitur Utama
 
 - ✅ CRUD Produk
@@ -27,6 +35,7 @@ Sistem manajemen transaksi produk berbasis web menggunakan **Laravel** dan **Adm
 - `id` (PK)
 - `nama` (string)
 - `harga` (integer)
+- `stok` (integer)
 - `kategori_id` (FK ke `kategoris`)
 
 ### 3. `transaksis`
