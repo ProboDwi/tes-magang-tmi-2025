@@ -33,7 +33,7 @@ Sistem manajemen transaksi produk berbasis web menggunakan **Laravel** dan **Adm
 
 ### 2. `produks`
 - `id` (PK)
-- `nama` (string)
+- `nama_produk` (string)
 - `harga` (integer)
 - `stok` (integer)
 - `kategori_id` (FK ke `kategoris`)
@@ -43,7 +43,7 @@ Sistem manajemen transaksi produk berbasis web menggunakan **Laravel** dan **Adm
 - `produk_id` (FK ke `produks`)
 - `jumlah` (integer)
 - `total_harga` (integer)
-- `tanggal_transaksi` (date)
+- `tanggal` (date)
 
 ---
 
@@ -84,7 +84,7 @@ MAIL_USERNAME=your@email.com
 MAIL_PASSWORD=yourpassword
 MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=your@email.com
-MAIL_FROM_NAME="Sistem Transaksi"
+MAIL_FROM_NAME="Nama Sistem"
 
 # 6. Jalankan server lokal
 php artisan serve
