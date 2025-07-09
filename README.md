@@ -19,7 +19,7 @@ Sistem manajemen transaksi produk berbasis web menggunakan **Laravel** dan **Adm
 - ✅ CRUD Transaksi
 - ✅ Export data ke **PDF**
 - ✅ Export data ke **Excel**
-- ✅ Import data dari **Excel**
+- ✅ Import data dari **Excel** (hanya ada di kategori)
 - ✅ **Notifikasi Email Otomatis (SMTP)** saat transaksi
 - ✅ Tampilan dashboard menggunakan **AdminLTE**
 
@@ -89,20 +89,3 @@ MAIL_FROM_NAME="Sistem Transaksi"
 # 6. Jalankan server lokal
 php artisan serve
 ```
-
-📬 Notifikasi Email
-Setiap kali terjadi transaksi, sistem akan mengirimkan email otomatis berisi detail transaksi ke alamat email yang ditentukan. Pastikan konfigurasi SMTP sudah benar pada file .env.
-
-📁 Fitur Import & Export
-🔽 Import Excel
-Format file sesuai struktur tabel
-
-Akses melalui UI, dengan validasi data otomatis
-
-🔼 Export PDF / Excel
-Dapat mengekspor data produk, kategori, atau transaksi
-
-Tombol tersedia di halaman masing-masing data
-
-🖼️ Tampilan
-Tampilan UI berbasis AdminLTE untuk dashboard yang modern dan responsif.
