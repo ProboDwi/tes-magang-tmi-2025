@@ -12,8 +12,6 @@
 <div class="alert alert-success" id="success-alert">{{ session('success') }}</div>
 @endif
 
-
-
 {{-- Tabel Responsif --}}
 <div class="card">
     <div class="card-body">
@@ -22,9 +20,9 @@
             <a href="{{ route('produk.create') }}" class="btn btn-primary">
                 <i class="fas fa-plus"></i> Tambah Produk
             </a>
-
             @include('export.export')
         </div>
+        
         <div class="table-responsive">
             <table class="table table-bordered table-striped dataTable w-100" id="produk-table">
                 <thead class="text-nowrap">
@@ -53,7 +51,7 @@
                         <td>{{ $item->kategori->nama }}</td>
                         <td>Rp {{ number_format($item->harga, 0, ',', '.') }}</td>
                         <td>{{ $item->stok }}</td>
-                        
+
                     </tr>
                     @endforeach
                 </tbody>
@@ -65,13 +63,13 @@
 
 @section('js')
 <script>
-    setTimeout(() => {
-        const alert = document.getElementById('success-alert');
-        if (alert) {
-            alert.style.transition = 'opacity 0.5s ease';
-            alert.style.opacity = '0';
-            setTimeout(() => alert.remove(), 500);
-        }
-    }, 3000);
+        setTimeout(() => {
+            const alert = document.getElementById('success-alert');
+            if (alert) {
+                alert.style.transition = 'opacity 0.5s ease';
+                alert.style.opacity = '0';
+                setTimeout(() => alert.remove(), 500);
+            }
+        }, 3000);
 </script>
 @endsection
