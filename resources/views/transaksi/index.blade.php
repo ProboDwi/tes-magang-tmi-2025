@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+@include('components.preloader')
 
 {{-- Notifikasi --}}
 @if (session('success'))

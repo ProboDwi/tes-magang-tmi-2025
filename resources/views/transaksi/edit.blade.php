@@ -7,6 +7,8 @@
 @endsection
 
 @section('content')
+@include('components.preloader')
+
     <form action="{{ route('transaksi.update', $transaksi->id) }}" method="POST">
         @csrf
         @method('PUT')

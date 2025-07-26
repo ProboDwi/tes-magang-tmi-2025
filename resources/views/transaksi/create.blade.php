@@ -28,6 +28,8 @@
 @endsection
 
 @section('content')
+@include('components.preloader')
+
 <form action="{{ route('transaksi.store') }}" method="POST">
     @csrf
 
