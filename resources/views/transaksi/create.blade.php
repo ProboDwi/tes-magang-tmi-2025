@@ -55,7 +55,9 @@
         <input type="text" id="total_harga" class="form-control" readonly>
     </div>
 
-    <button class="btn btn-primary">Simpan</button>
+    {{-- Ganti tombol lama --}}
+    <x-btn-submit id="btn-submit-produk" text="Simpan" />
+    <!-- <button class="btn btn-primary">Simpan</button> -->
     <a href="{{ route('transaksi.index') }}" class="btn btn-secondary">Kembali</a>
 </form>
 @endsection

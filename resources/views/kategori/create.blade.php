@@ -3,7 +3,7 @@
 @section('title', 'Tambah Kategori')
 
 @section('content_header')
-    <h1>Tambah Kategori</h1>
+<h1>Tambah Kategori</h1>
 @endsection
 
 @section('content')
@@ -13,17 +13,20 @@
 <div class="alert alert-success" id="success-alert">{{ session('success') }}</div>
 @endif
 
-    <form action="{{ route('kategori.store') }}" method="POST">
-        @csrf
+<form action="{{ route('kategori.store') }}" method="POST">
+    @csrf
 
-        <div class="form-group">
-            <label>Nama Kategori</label>
-            <input type="text" name="nama" class="form-control" value="{{ old('nama') }}">
-        </div>
+    <div class="form-group">
+        <label>Nama Kategori</label>
+        <input type="text" name="nama" class="form-control" value="{{ old('nama') }}">
+    </div>
 
-        <button class="btn btn-primary">Simpan</button>
-        <a href="{{ route('kategori.index') }}" class="btn btn-secondary">Kembali</a>
-    </form>
+    {{-- Ganti tombol lama --}}
+    <x-btn-submit id="btn-submit-produk" text="Simpan" />
+
+    <!-- <button class="btn btn-primary">Simpan</button> -->
+    <a href="{{ route('kategori.index') }}" class="btn btn-secondary">Kembali</a>
+</form>
 @endsection
 
 @section('js')
