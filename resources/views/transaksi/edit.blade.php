@@ -9,39 +9,43 @@
 @section('content')
 @include('components.preloader')
 
-<form action="{{ route('transaksi.update', $transaksi->id) }}" method="POST">
-    @csrf
-    @method('PUT')
+<div class="card">
+    <div class="card-body">
+        <form action="{{ route('transaksi.update', $transaksi->id) }}" method="POST">
+            @csrf
+            @method('PUT')
 
-    <div class="form-group">
-        <label>Produk</label>
-        <select name="produk_id" id="produk" class="form-control" required>
-            @foreach ($produk as $item)
-            <option value="{{ $item->id }}"
-                data-harga="{{ $item->harga }}"
-                {{ $item->id == $transaksi->produk_id ? 'selected' : '' }}>
-                {{ $item->nama_produk }} - Rp {{ number_format($item->harga, 0, ',', '.') }}
-            </option>
-            @endforeach
-        </select>
+            <div class="form-group">
+                <label>Produk</label>
+                <select name="produk_id" id="produk" class="form-control" required>
+                    @foreach ($produk as $item)
+                    <option value="{{ $item->id }}"
+                        data-harga="{{ $item->harga }}"
+                        {{ $item->id == $transaksi->produk_id ? 'selected' : '' }}>
+                        {{ $item->nama_produk }} - Rp {{ number_format($item->harga, 0, ',', '.') }}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Jumlah</label>
+                <input type="number" name="jumlah" id="jumlah" class="form-control" min="1"
+                    value="{{ old('jumlah', $transaksi->jumlah) }}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Total Harga</label>
+                <input type="text" id="total_harga" class="form-control" readonly>
+            </div>
+
+            {{-- Ganti tombol lama --}}
+            <x-btn-submit id="btn-submit-produk" text="Simpan" />
+            <!-- <button class="btn btn-primary">Update</button> -->
+            <a href="{{ route('transaksi.index') }}" class="btn btn-secondary">Kembali</a>
+        </form>
     </div>
-
-    <div class="form-group">
-        <label>Jumlah</label>
-        <input type="number" name="jumlah" id="jumlah" class="form-control" min="1"
-            value="{{ old('jumlah', $transaksi->jumlah) }}" required>
-    </div>
-
-    <div class="form-group">
-        <label>Total Harga</label>
-        <input type="text" id="total_harga" class="form-control" readonly>
-    </div>
-
-    {{-- Ganti tombol lama --}}
-    <x-btn-submit id="btn-submit-produk" text="Simpan" />
-    <!-- <button class="btn btn-primary">Update</button> -->
-    <a href="{{ route('transaksi.index') }}" class="btn btn-secondary">Kembali</a>
-</form>
+</div>
 @endsection
 
 @section('js')

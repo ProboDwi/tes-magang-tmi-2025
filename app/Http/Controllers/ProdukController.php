@@ -23,8 +23,8 @@ class ProdukController extends Controller
 
     public function create()
     {
-        $kategori = Kategori::all();
-        return view('produk.create', compact('kategori'));
+        // $kategori = Kategori::all();
+        return view('produk.create');
     }
 
     public function store(Request $request)
@@ -33,14 +33,14 @@ class ProdukController extends Controller
             'nama_produk' => 'required',
             'harga' => 'required',
             'stok' => 'required',
-            'kategori_id' => 'required',
+            // 'kategori_id' => 'required',
         ]);
 
         $produk = Produk::create([
             'nama_produk' => $request->input('nama_produk'),
             'harga' => $request->input('harga'),
             'stok' => $request->input('stok'),
-            'kategori_id' => $request->input('kategori_id'),
+            // 'kategori_id' => $request->input('kategori_id'),
         ]);
 
         if ($produk) {
@@ -53,8 +53,8 @@ class ProdukController extends Controller
     public function edit($id)
     {
         $produk = Produk::findOrFail($id);
-        $kategori = Kategori::all();
-        return view('produk.edit', compact('produk', 'kategori'));
+        // $kategori = Kategori::all();
+        return view('produk.edit', compact('produk'));
     }
 
     public function update(Request $request, $id)
@@ -63,7 +63,7 @@ class ProdukController extends Controller
             'nama_produk' => 'required',
             'harga' => 'required',
             'stok' => 'required',
-            'kategori_id' => 'required',
+            // 'kategori_id' => 'required',
         ]);
 
         $produk = Produk::findOrFail($id);
@@ -71,7 +71,7 @@ class ProdukController extends Controller
             'nama_produk' => $request->input('nama_produk'),
             'harga' => $request->input('harga'),
             'stok' => $request->input('stok'),
-            'kategori_id' => $request->input('kategori_id'),
+            // 'kategori_id' => $request->input('kategori_id'),
         ]);
 
         if ($produk) {

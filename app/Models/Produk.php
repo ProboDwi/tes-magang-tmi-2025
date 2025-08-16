@@ -15,16 +15,20 @@ class Produk extends Model
         'nama_produk',
         'harga',
         'stok',
-        'kategori_id',
     ];
-
-    public function kategori()
-    {
-        return $this->belongsTo(Kategori::class);
-    }
 
     public function transaksi()
     {
         return $this->hasMany(Transaksi::class);
+    }
+
+    public function barangMasuk()
+    {
+        return $this->hasMany(BarangMasuk::class);
+    }
+
+    public function produkSatuan()
+    {
+        return $this->hasMany(ProdukSatuan::class, 'produk_id');
     }
 }

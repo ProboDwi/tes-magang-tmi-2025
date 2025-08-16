@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('produks', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_produk');
-            $table->integer('harga');
-            $table->integer('stok');
-            $table->string('satuan')->nullable()->default('ball');
+        Schema::create('satuans', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nama', 50);
+            $table->decimal('isi_per_satuan', 10, 2)->default(1);
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produks');
+        Schema::dropIfExists('satuans');
     }
 };

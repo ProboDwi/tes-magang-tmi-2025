@@ -300,15 +300,15 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
-            'type' => 'navbar-search',
-            'text' => 'search',
-            'topnav_right' => true,
-        ],
-        [
-            'type' => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
+        // [
+        //     'type' => 'navbar-search',
+        //     'text' => 'search',
+        //     'topnav_right' => true,
+        // ],
+        // [
+        //     'type' => 'fullscreen-widget',
+        //     'topnav_right' => true,
+        // ],
 
         // Sidebar items:
         [
@@ -325,16 +325,36 @@ return [
             'url'  => 'produk',
             'icon' => 'fas fa-box',
         ],
-        [
-            'text' => 'Kategori',
-            'url'  => 'kategori',
-            'icon' => 'fas fa-tags',
-        ],
+        // [
+        //     'text' => 'Kategori',
+        //     'url'  => 'kategori',
+        //     'icon' => 'fas fa-tags',
+        // ],
         [
             'text' => 'Transaksi',
             'url'  => 'transaksi',
             'icon' => 'fas fa-receipt',
         ],
+        [
+            'text' => 'Barang Masuk',
+            'url'  => 'barang_masuk',
+            'icon' => 'fas fa-chart-bar',
+        ],
+        // [
+        //     'text' => 'Satuan',
+        //     'url'  => 'satuan',
+        //     'icon' => 'fas fa-chart-bar',
+        // ],
+        [
+            'text' => 'Produk Satuan',
+            'url'  => 'produk_satuan',
+            'icon' => 'fas fa-chart-bar',
+        ],
+        // [
+        //     'text' => 'Konversi Satuan',
+        //     'url'  => 'konversi_satuan',
+        //     'icon' => 'fas fa-chart-bar',
+        // ],
 
         // [
         //     'text' => 'blog',
